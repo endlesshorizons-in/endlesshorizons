@@ -1,6 +1,6 @@
 import SectionHeading from '../components/common/SectionHeading'
 import PageContainer from '../components/layout/PageContainer'
-import DestinationCard from '../components/portfolio/DestinationCard'
+import DestinationMosaic from '../components/portfolio/DestinationMosaic'
 import { destinationGallery, destinations } from '../data/destinations'
 
 export default function Destinations() {
@@ -11,10 +11,9 @@ export default function Destinations() {
         title="Explore The Valley Highlights"
         subtitle="From lakes and meadows to glacier viewpoints, pick the route that fits your season."
       />
-      <div className="grid gap-4 md:grid-cols-3">
-        {destinations.map((destination) => (
-          <DestinationCard key={destination.name} destination={destination} />
-        ))}
+      <div className="flex flex-col gap-4">
+        <DestinationMosaic destinations={destinations.slice(0, 3)} />
+        <DestinationMosaic destinations={destinations.slice(3)} />
       </div>
 
       <section className="mt-8">

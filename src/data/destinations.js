@@ -51,16 +51,6 @@ export const destinations = [
     highlights: ['Thajiwas glacier', 'Scenic drive', 'High-altitude viewpoints'],
   },
   {
-    name: 'Tulip Garden',
-    region: 'Srinagar',
-    description: 'Seasonal bloom walks set against snow-lined Himalayan backdrops.',
-    idealFor: 'Spring travelers and family groups',
-    duration: '2N / 3D',
-    bestSeason: 'Late March to April',
-    image: backgroundImage,
-    highlights: ['Tulip terraces', 'Garden promenade', 'Spring city tour'],
-  },
-  {
     name: 'Betaab Valley',
     region: 'Pahalgam Circuit',
     description: 'Wide green floors, crystal streams, and cinematic mountain views.',
