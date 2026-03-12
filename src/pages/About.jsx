@@ -8,9 +8,22 @@ export default function About() {
       <PageContainer>
         <SectionHeading
           eyebrow="About Endless Horizons"
-          title="Mountain Journeys Planned With Local Insight"
-          subtitle="We design routes across Jammu, Kashmir, and Ladakh with comfort, safety, and clarity in mind."
+          title="Welcome to ENDLESS HORIZONS your host in the valley"
+          subtitle="Trusted local guidance for comfortable, personalized, and memorable Kashmir journeys."
         />
+
+        <Card>
+          <h3 className="text-2xl font-semibold text-white">About Us</h3>
+          <p className="mt-3 text-slate-200">
+            Welcome to our Kashmir travel family. We are delighted to help you discover the breathtaking beauty of Kashmir, often called the Paradise on Earth.
+          </p>
+          <p className="mt-2 text-slate-200">
+            From the peaceful waters of Dal Lake to the stunning valleys of Gulmarg, Pahalgam, Gurez, and Sonamarg, every journey here is filled with unforgettable moments.
+          </p>
+          <p className="mt-2 text-slate-200">
+            Whether you are planning a family vacation, honeymoon, or adventure trip, we are here to make your Kashmir journey smooth, safe, and truly special.
+          </p>
+        </Card>
       </PageContainer>
 
       <section className="mx-auto my-10 grid w-[min(1120px,92vw)] gap-4 md:grid-cols-2">

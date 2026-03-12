@@ -23,18 +23,24 @@ export default function DestinationCard({ destination }) {
 			<div className="overflow-hidden transition-all duration-300 md:max-h-0 md:translate-y-2 md:opacity-0 md:delay-75 md:group-hover:max-h-64 md:group-hover:translate-y-0 md:group-hover:opacity-100">
 				<p className="mb-2 text-slate-200">{destination.description}</p>
 				<p className="mb-1 text-slate-100">
-					<strong>Ideal For:</strong> {destination.idealFor}
+					<strong hidden={!destination.idealFor}>Ideal For:</strong> {destination.idealFor}
 				</p>
 				{destination.priceRange && (
 					<p className="text-slate-100">
 						<strong>Starting From:</strong> {destination.priceRange}
 					</p>
 				)}
-				<ul className="mt-3 list-inside list-disc space-y-1 text-sm text-slate-200">
+				<div className="mt-3 flex flex-wrap gap-2">
 					{destination.highlights.map((point) => (
-						<li key={point}>{point}</li>
+						<span
+							key={point}
+							className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.08] px-2.5 py-1 text-xs text-slate-200"
+						>
+							<span className="text-[10px] text-cyan-200" aria-hidden="true">✦</span>
+							{point}
+						</span>
 					))}
-				</ul>
+				</div>
 			</div>
 		</Card>
 	)

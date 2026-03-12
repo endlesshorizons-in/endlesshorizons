@@ -16,13 +16,13 @@ export default function Contact() {
         <Card>
           <h3 className="text-2xl font-semibold text-green-100">Reach Us</h3>
           <p className="mt-2">
-            Email: hello@endlesshorizons.travel
+            Email: 
             <br />
-            Phone: +91 88888 77777
+            Phone: +91 9149431835
             <br />
-            Office: Baramulla, Jammu & Kashmir
+            Office: Kalantra Baramulla, Jammu & Kashmir
           </p>
-          <p className="mt-2 text-sm">Mon-Sat | 9:00 AM - 8:00 PM IST</p>
+          <p className="mt-2 text-sm">24 * 7 Support</p>
         </Card>
         <Card>
           <form className="grid gap-4">

@@ -23,7 +23,7 @@ export default function Footer() {
 						</a>
 						<p className="flex items-center gap-2">
 							<span aria-hidden="true">📍</span>
-							Baramulla, Jammu & Kashmir
+							Kalantra Baramulla, Jammu & Kashmir
 						</p>
 					</div>
 				</div>
@@ -46,7 +46,7 @@ export default function Footer() {
 							</svg>
 						</a>
 						<a
-							href="https://facebook.com/endlesshorizons"
+							href="https://www.facebook.com/share/1Cd2LGRfbc/"
 							target="_blank"
 							rel="noreferrer"
 							aria-label="Facebook"

@@ -9,7 +9,7 @@ export default function SectionHeading({ eyebrow, title, subtitle }) {
 			<h2 className="mt-2 text-3xl font-semibold tracking-tight text-white md:text-4xl">
 				{title}
 			</h2>
-			{subtitle ? <p className="mt-2 max-w-3xl text-slate-200">{subtitle}</p> : null}
+			{subtitle ? <p className="mt-2 ml-2 max-w-4xl text-slate-200  ">{subtitle}</p> : null}
 		</div>
 	)
 }
