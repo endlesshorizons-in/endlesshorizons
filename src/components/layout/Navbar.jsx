@@ -1,14 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { assetUrl } from '../../lib/assetUrls'
-
-const navItems = [
-	{ to: '/', label: 'Home' },
-	{ to: '/destinations', label: 'Destinations' },
-	{ to: '/services', label: 'Services' },
-	{ to: '/about', label: 'About Us' },
-	{ to: '/contact', label: 'Contact' },
-]
+import { ROUTE_PATHS, navRoutes } from '../../lib/routes'
 
 export default function Navbar() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -21,7 +14,7 @@ export default function Navbar() {
 		<header className="sticky top-0 z-50 border-b border-white/20 bg-slate-950/78 shadow-[0_14px_40px_rgba(2,6,23,0.52)] backdrop-blur-2xl supports-backdrop-filter:bg-slate-950/60">
 			<nav className="mx-auto w-[min(1120px,92vw)] py-3 md:grid md:min-h-[5.8rem] md:grid-cols-[1fr_auto_1fr] md:items-center">
 				<div className="flex items-center justify-between md:justify-start">
-					<NavLink to="/" onClick={closeMobileMenu} className="flex items-center gap-3 text-xl font-semibold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] md:text-2xl">
+					<NavLink to={ROUTE_PATHS.HOME} onClick={closeMobileMenu} className="flex items-center gap-3 text-xl font-semibold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] md:text-2xl">
 						<img src={assetUrl('Logo.png')} alt="Endless Horizons logo" className="h-11 w-11 rounded-full border border-white/20 bg-white/80 p-1 md:h-12 md:w-12" />
 						Endless Horizons
 					</NavLink>
@@ -39,7 +32,7 @@ export default function Navbar() {
 
 				<div className="hidden justify-center md:flex">
 					<div className="flex flex-wrap justify-center gap-2 rounded-full border border-white/15 bg-white/10 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
-						{navItems.map((item) => (
+						{navRoutes.map((item) => (
 							<NavLink
 								key={item.to}
 								to={item.to}
@@ -59,7 +52,7 @@ export default function Navbar() {
 
 				{isMobileMenuOpen && (
 					<div className="mt-3 grid gap-2 rounded-2xl border border-white/20 bg-slate-950/95 p-2 md:hidden">
-						{navItems.map((item) => (
+						{navRoutes.map((item) => (
 							<NavLink
 								key={item.to}
 								to={item.to}

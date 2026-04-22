@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Card from '../components/common/Card'
 import Seo from '../components/common/Seo'
 import { assetUrl } from '../lib/assetUrls'
+import { ROUTE_PATHS } from '../lib/routes'
 import { destinations } from '../data/destinations'
 
 export default function Home() {
@@ -62,7 +63,7 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                to="/destinations"
+                to={ROUTE_PATHS.DESTINATIONS}
                 className="rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/20"
               >
                 View Work

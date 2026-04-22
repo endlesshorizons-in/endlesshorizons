@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import Card from '../components/common/Card'
 import Seo from '../components/common/Seo'
 import PageContainer from '../components/layout/PageContainer'
+import { ROUTE_PATHS } from '../lib/routes'
 
 export default function ThankYou() {
   const location = useLocation()
@@ -27,7 +28,7 @@ export default function ThankYou() {
         </p>
         {leadId ? <p className="mt-2 text-slate-700"><strong>Reference:</strong> {leadId}</p> : null}
         <Link
-          to="/"
+          to={ROUTE_PATHS.HOME}
           className="mt-3 inline-block rounded-full bg-teal-50 px-4 py-3 text-sm font-bold text-teal-900 transition hover:bg-teal-100"
         >
           Back To Home

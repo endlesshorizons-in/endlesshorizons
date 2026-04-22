@@ -2,16 +2,8 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Destinations from './pages/Destinations'
-import Home from './pages/Home'
-import Intake from './pages/Intake'
-import NotFound from './pages/NotFound'
-import Portfolio from './pages/Portfolio'
-import Services from './pages/Services'
-import ThankYou from './pages/ThankYou'
 import { assetUrl } from './lib/assetUrls'
+import { appRoutes } from './lib/routes'
 
 function App() {
   const [scrollY, setScrollY] = useState(0)
@@ -43,15 +35,9 @@ function App() {
         <Navbar />
         <main className="flex-1 pb-8">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/destinations" element={<Destinations />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/intake" element={<Intake />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
+            {appRoutes.map((route) => (
+              <Route key={route.path} path={route.path} element={route.element} />
+            ))}
           </Routes>
         </main>
         <Footer />
