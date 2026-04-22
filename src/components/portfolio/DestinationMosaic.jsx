@@ -36,11 +36,17 @@ export default function DestinationMosaic({ destinations: dests }) {
             className="relative overflow-hidden rounded-2xl"
             style={{
               height: 220,
-              backgroundImage: `url(${dest.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              contentVisibility: 'auto',
+              containIntrinsicSize: '220px',
             }}
           >
+            <img
+              src={dest.image}
+              alt={dest.name}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
             <div
               className="absolute bottom-0 left-0 right-0 p-4"
               style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}

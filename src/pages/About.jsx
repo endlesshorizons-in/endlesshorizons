@@ -11,12 +11,8 @@ export default function About() {
   const certificateDetails = [
     { label: 'Agency', value: 'Endless Horizons' },
     { label: 'Registration No.', value: 'JKEA00005744' },
-    { label: 'Registered As', value: 'Excursion Agent' },
-    { label: 'Location', value: 'Kalantra Payeen' },
-    { label: 'Valid Until', value: '31/12/2026' },
     { label: 'Registration Date', value: '09/02/2026' },
     { label: 'Proprietor', value: 'Arfat Rehman Lone' },
-    { label: 'Parentage', value: 'Abdul Rehman Lone' },
   ]
 
   return (
