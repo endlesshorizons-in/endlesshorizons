@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import Card from '../components/common/Card'
+import Seo from '../components/common/Seo'
 import PageContainer from '../components/layout/PageContainer'
 
 export default function NotFound() {
   return (
     <PageContainer>
+      <Seo title="Page Not Found" description="The requested page is not available on Endless Horizons." noIndex />
       <Card>
         <p className="mb-2 text-xs font-bold uppercase tracking-wider text-teal-700">404</p>
         <h2 className="text-3xl font-semibold tracking-tight text-slate-900">This Route Is Off The Map</h2>

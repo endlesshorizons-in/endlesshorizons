@@ -1,4 +1,5 @@
 import SectionHeading from '../components/common/SectionHeading'
+import Seo from '../components/common/Seo'
 import DestinationCard from '../components/portfolio/DestinationCard'
 import TestimonialCard from '../components/portfolio/TestimonialCard'
 import { destinations } from '../data/destinations'
@@ -7,6 +8,11 @@ import { testimonials } from '../data/testimonials'
 export default function Portfolio() {
   return (
     <>
+      <Seo
+        title="Portfolio"
+        description="See the most booked Kashmir route ideas and traveler feedback that show how Endless Horizons plans memorable trips."
+        image={destinations[0]?.image}
+      />
       <section className="mx-auto my-10 w-[min(1120px,92vw)]">
         <SectionHeading
           eyebrow="Popular Tours"

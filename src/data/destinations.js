@@ -1,68 +1,141 @@
-import backgroundImage from '../assets/images/Background.jpg'
-import campingImage from '../assets/images/camping.jpg'
-import dalLakeImage from '../assets/images/dal_lake.jpg'
-import forestImage from '../assets/images/Forest.jpg'
-import gulmargImage from '../assets/images/Gulmarg.jpg'
-import hutInWoodsImage from '../assets/images/hut_in_woods.jpg'
-import mountainsImage from '../assets/images/Mountains.jpg'
-import snowGulmargImage from '../assets/images/snow_covered_gulmarg.jpg'
-import gulmargMeadowImage from '../assets/images/gulmarg-meadows.jpg'
-import pahalgamImage from '../assets/images/pahalgam.jpg'
+import { assetUrl } from '../lib/assetUrls'
 
 export const destinations = [
   {
-    name: 'Dal Lake',
-    region: 'Srinagar',
-    description: 'Shikara rides, heritage houseboats, and soft sunrise reflections.',
-    idealFor: 'Couples and relaxed family travel',
-    duration: '3N / 4D',
+    name: 'Wular Lake',
+    region: 'Bandipora & Sopore Belt',
+    description:
+      'One of Asia\'s largest freshwater lakes, known for broad wetland views, sunset points, and the historic Zaina Lank island.',
+    idealFor: 'Birdwatchers, landscape photographers, and day trips',
+    duration: 'Half Day',
     bestSeason: 'April to October',
-    image: dalLakeImage,
-    highlights: ['Shikara cruise', 'Floating market', 'Houseboat stay'],
+    image: assetUrl('wular.jpg'),
+    highlights: ['Freshwater wetland landscape', 'Zaina Lank island', 'Sunset viewpoints'],
+    mapUrl: 'https://www.google.com/maps/dir//34.2317627,74.3002581',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/wular-lake/',
+  },
+  {
+    name: 'Aharbal',
+    region: 'Kulgam',
+    description:
+      'A dramatic waterfall on the Veshav River, often called the Niagara Falls of Kashmir, with nearby trekking and angling spots.',
+    idealFor: 'Nature lovers, short adventure stops, and photographers',
+    duration: 'Full Day',
+    bestSeason: 'May to September',
+    image: assetUrl('aharbal.jpg'),
+    highlights: ['25-meter waterfall drop', 'Forest viewpoints', 'Trekking and fishing access'],
+    mapUrl: 'https://www.google.com/maps/dir//33.6426152,74.7674132',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/aharbal/',
   },
   {
     name: 'Gulmarg',
     region: 'North Kashmir',
-    description: 'Snow slopes, gondola rides, pine valleys, and alpine meadows.',
-    idealFor: 'Adventure seekers and winter travelers',
+    description:
+      'A mountain meadow resort famous for the Gulmarg Gondola, winter skiing slopes, and panoramic Himalayan views.',
+    idealFor: 'Adventure seekers, honeymooners, and winter sports travelers',
     duration: '4N / 5D',
     bestSeason: 'December to March',
-    image: snowGulmargImage,
-    highlights: ['Ski and snowboard', 'Gondola Phase 2', 'Snow valley walks'],
+    image: assetUrl('snow_covered_gulmarg.jpg'),
+    highlights: ['World-famous gondola ride', 'Ski and snowboard terrain', 'Strawberry Valley routes'],
+    mapUrl: 'https://www.google.com/maps/dir//34.0484,74.3805',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/gulmarg/',
+  },
+  {
+    name: 'Dal Lake',
+    region: 'Srinagar',
+    description:
+      'Srinagar\'s iconic urban lake known for houseboats, shikara rides, floating gardens, and Mughal garden skylines.',
+    idealFor: 'Couples and relaxed family travel',
+    duration: '3N / 4D',
+    bestSeason: 'April to October',
+    image: assetUrl('dal_lake.jpg'),
+    highlights: ['Shikara cruise', 'Houseboat stays', 'Floating gardens in bloom'],
+    mapUrl: 'https://www.google.com/maps/dir//34.1215,74.8683',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/dal-lake/',
   },
   {
     name: 'Pahalgam',
     region: 'Anantnag',
-    description: 'Riverside valleys, cedar forests, and scenic countryside drives.',
+    description:
+      'A cool hill resort ringed by evergreen forests and the Lidder stream, also serving as a key base toward the Amarnath route.',
     idealFor: 'Leisure holidays and honeymoon routes',
     duration: '4N / 5D',
     bestSeason: 'May to September',
-    image: pahalgamImage,
-    highlights: ['Aru Valley', 'Lidder riverbank', 'Countryside picnic routes'],
+    image: assetUrl('pahalgam.jpg'),
+    highlights: ['Lidder valley scenery', 'Pleasant summer climate', 'Transit base toward Amarnath'],
+    mapUrl: 'https://www.google.com/maps/dir//34.016373,75.318054',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/pahalgam/',
   },
   {
     name: 'Sonamarg',
     region: 'Ganderbal',
-    description: 'Glacier gateways, high meadows, and mountain stream trails.',
-    idealFor: 'Road-trip enthusiasts and photographers',
+    description:
+      'The Meadow of Gold with glacier access, alpine trekking trails, and riverfront adventure activity during summer.',
+    idealFor: 'Road-trip enthusiasts, trekkers, and outdoor groups',
     duration: '3N / 4D',
     bestSeason: 'June to September',
-    image: mountainsImage,
-    highlights: ['Thajiwas glacier', 'Scenic drive', 'High-altitude viewpoints'],
+    image: assetUrl('Mountains.jpg'),
+    highlights: ['Thajiwas glacier rides', 'Trekking lake routes', 'Seasonal river rafting events'],
+    mapUrl: 'https://www.google.com/maps/dir//34.1941805,74.3128478',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/sonamarg/',
   },
   {
-    name: 'Betaab Valley',
-    region: 'Pahalgam Circuit',
-    description: 'Wide green floors, crystal streams, and cinematic mountain views.',
-    idealFor: 'Nature-focused itineraries',
-    duration: '3N / 4D',
+    name: 'Shri Amarnath Ji',
+    region: 'Anantnag Highlands',
+    description:
+      'A high-altitude cave shrine where the seasonal ice lingam forms naturally, drawing pilgrims during the annual Shravan yatra.',
+    idealFor: 'Spiritual travel and high-altitude pilgrimage',
+    duration: '2N / 3D+',
+    bestSeason: 'July to August',
+    image: assetUrl('amarnath.webp'),
+    highlights: ['Sacred cave at 13,000 ft', 'Traditional yatra route', 'Scenic Chandanwari and Panjtarni sectors'],
+    mapUrl: 'https://www.google.com/maps/dir//34.2157,75.5041',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/shri-amarnath-ji/',
+  },
+  {
+    name: 'Tulip Garden',
+    region: 'Srinagar (Zabarwan Foothills)',
+    description:
+      'Asia\'s largest tulip garden with terraced landscaping, seasonal flower displays, and Dal Lake views in spring.',
+    idealFor: 'Spring holidays, families, and flower photography',
+    duration: 'Half Day',
+    bestSeason: 'March to April',
+    image: assetUrl('tulip-garden.webp'),
+    highlights: ['Annual tulip festival', 'Seven terraced levels', 'Hyacinth and daffodil beds'],
+    mapUrl: 'https://www.google.com/maps/dir//34.0964909,74.8778511',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/tulip-garden/',
+  },
+  {
+    name: 'Badamwari',
+    region: 'Srinagar (Koh-e-Maran Foothills)',
+    description:
+      'A historic almond garden in old Srinagar where early spring blossom creates one of the city\'s most-loved seasonal walks.',
+    idealFor: 'Spring visits, easy walks, and local heritage outings',
+    duration: '2 to 3 Hours',
+    bestSeason: 'March to April',
+    image: assetUrl('badamwari.jpg'),
+    highlights: ['Almond blossom season', 'Historic garden landscape', 'Revived public heritage site'],
+    mapUrl: 'https://www.google.com/maps/dir//34.1115,74.8211',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/badamwari/',
+  },
+  {
+    name: 'Chashma Shahi',
+    region: 'Srinagar (Zabarwan Range)',
+    description:
+      'A 17th-century Mughal garden built around a freshwater spring, known for terraced Persian-style layout and Dal viewpoints.',
+    idealFor: 'Culture-focused tours, architecture lovers, and city sightseeing',
+    duration: '2 to 3 Hours',
     bestSeason: 'April to October',
-    image: hutInWoodsImage,
-    highlights: ['Valley viewpoints', 'Forest huts', 'Riverside nature walk'],
+    image: assetUrl('chashme-shahi.jpg'),
+    highlights: ['Mughal-era garden design', 'Natural spring channel', 'Terraced fountains and pools'],
+    mapUrl: 'https://www.google.com/maps/dir//34.0812176,74.7944442',
+    sourceUrl: 'https://divcomkashmir.jk.gov.in/tourist-place/chashma-shahi/',
   },
 ]
 
 export const destinationGallery = [
-  { name: 'Valley Camp', image: campingImage },
-  { name: 'Gulmarg Meadow', image: gulmargMeadowImage },
+  { name: 'Valley Camp', image: assetUrl('camping.jpg') },
+  { name: 'Gulmarg Meadow', image: assetUrl('gulmarg-meadows.jpg') },
+  { name: 'Forest Mist Trail', image: assetUrl('Forest.jpg') },
+  { name: 'Snow Valley Ridge', image: assetUrl('Mountains.jpg') },
 ]

@@ -13,7 +13,7 @@ export default function Footer() {
 				<div>
 					<p className="text-sm font-semibold uppercase tracking-wider text-white/90">Contact</p>
 					<div className="mt-3 space-y-2 text-sm text-slate-200">
-						<a href="tel:+918888877777" className="flex items-center gap-2 hover:text-white">
+						<a href="tel:+919149431835" className="flex items-center gap-2 hover:text-white">
 							<span aria-hidden="true">📞</span>
 							+91 91494 31835
 						</a>

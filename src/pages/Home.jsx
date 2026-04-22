@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import reactIcon from '../assets/react.svg'
-import logo from '../assets/icons/Logo.png'
-import forestImage from '../assets/images/Forest.jpg'
-import gulmargImage from '../assets/images/Gulmarg.jpg'
-import mountainsImage from '../assets/images/Mountains.jpg'
 import Card from '../components/common/Card'
+import Seo from '../components/common/Seo'
+import { assetUrl } from '../lib/assetUrls'
 import { destinations } from '../data/destinations'
 
 export default function Home() {
@@ -41,6 +38,11 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title="Kashmir Travel Planning"
+        description="Plan curated Kashmir, Jammu, and Ladakh journeys with local guides, transparent itineraries, and responsive support from Endless Horizons."
+        image={assetUrl('Mountains.jpg')}
+      />
       <section className="mx-auto mt-8 w-[min(1120px,92vw)]">
         <div className="grid min-h-[65vh] items-start gap-10 md:grid-cols-[0.5fr_1.1fr]">
           <div className="md:sticky md:top-24">
@@ -60,12 +62,6 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                to="/intake"
-                className="rounded-full bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-slate-100"
-              >
-                Start Intake
-              </Link>
-              <Link
                 to="/destinations"
                 className="rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/20"
               >
@@ -81,8 +77,10 @@ export default function Home() {
               style={{ transform: `translateY(${6 - lift}px)` }}
             >
               <img
-                src={mountainsImage}
+                src={assetUrl('Mountains.jpg')}
                 alt="Snow-capped mountains"
+                loading="eager"
+                decoding="async"
                 className="h-72 w-full rounded-2xl object-cover"
               />
               <div className="mt-4 flex items-center justify-between">
@@ -99,8 +97,10 @@ export default function Home() {
                 style={{ transform: `translateY(${18 - lift * 0.75}px)` }}
               >
                 <img
-                  src={forestImage}
+                  src={assetUrl('Forest.jpg')}
                   alt="Forest path"
+                  loading="lazy"
+                  decoding="async"
                   className="h-56 w-full rounded-2xl object-cover"
                 />
                 <p className="mt-3 text-sm text-slate-100">
@@ -114,8 +114,10 @@ export default function Home() {
                 style={{ transform: `translateY(${18 - lift * 0.65}px)` }}
               >
                 <img
-                  src={gulmargImage}
+                  src={assetUrl('Gulmarg.jpg')}
                   alt="Gulmarg valley"
+                  loading="lazy"
+                  decoding="async"
                   className="h-56 w-full rounded-2xl object-cover"
                 />
                 <p className="mt-3 text-sm text-slate-100">
@@ -149,6 +151,8 @@ export default function Home() {
                     key={dest.name}
                     src={dest.image}
                     alt={dest.name}
+                    loading="lazy"
+                    decoding="async"
                     className="h-72 w-full shrink-0 object-cover"
                   />
                 ))}
@@ -198,8 +202,10 @@ export default function Home() {
           >
             <div>
               <img
-                src={logo}
+                src={assetUrl('Logo.png')}
                 alt="Endless Horizons symbol"
+                loading="lazy"
+                decoding="async"
                 className="h-14 w-14 rounded-full bg-white/85 p-1"
               />
               <p className="mt-5 text-base font-semibold text-white">
@@ -211,8 +217,8 @@ export default function Home() {
               </p>
               <div className="mt-6 grid grid-cols-3 gap-3">
                 {[
-                  { value: '200+', label: 'Trips done' },
-                  { value: '7 yrs', label: 'Operating' },
+                  { value: '20+', label: 'Trips done' },
+                  { value: '1 yr', label: 'Operating' },
                   { value: '100%', label: 'Local guides' },
                 ].map(({ value, label }) => (
                   <div
@@ -260,7 +266,7 @@ export default function Home() {
                 <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/30 bg-slate-900/70 text-sm font-bold text-white shadow-[0_0_0_5px_rgba(255,255,255,0.04)] backdrop-blur-md">
                   {num}
                 </div>
-                <div className="hidden h-5 w-px bg-gradient-to-b from-white/25 to-transparent md:block" />
+                <div className="hidden h-5 w-px bg-linear-to-b from-white/25 to-transparent md:block" />
                 <div className="flex-1 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:w-full md:text-center">
                   <p className="font-semibold text-white">{title}</p>
                   <p className="mt-2 text-sm text-slate-300">{desc}</p>

@@ -1,12 +1,4 @@
-import dalLakeImage from '../assets/images/dal_lake.jpg'
-import snowGulmargImage from '../assets/images/snow_covered_gulmarg.jpg'
-import mountainsImage from '../assets/images/Mountains.jpg'
-import gulmargImage from '../assets/images/Gulmarg.jpg'
-import hutInWoodsImage from '../assets/images/hut_in_woods.jpg'
-import srinagarImage from '../assets/images/Srinagar scapes.jpg'
-import pahalgamImage from '../assets/images/pahalgam.jpg'
-import gulmargMeadowImage from '../assets/images/gulmarg-meadows.jpg'
-import forestImage from '../assets/images/Forest.jpg'
+import { assetUrl } from '../lib/assetUrls'
 
 export const services = [
   {
@@ -14,14 +6,14 @@ export const services = [
     summary:
       '5 Nights/6 Days',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
-    image: dalLakeImage,
+    image: assetUrl('dal_lake.jpg'),
   },
   {
     title: 'Leh Ladakh Tour',
     summary:
       '5 Nights/6 Days',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
-    image: snowGulmargImage,
+    image: assetUrl('snow_covered_gulmarg.jpg'),
 
   },
   {
@@ -29,47 +21,47 @@ export const services = [
     summary:
       '6 Nights/7 Days',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
-    image: mountainsImage,
+    image: assetUrl('Mountains.jpg'),
   },
   {
     title: 'Charismatic Kashmir With Gulmarg',
     summary:
       '5 Nights/6 Days',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
-    image: gulmargImage,
+    image: assetUrl('Gulmarg.jpg'),
   },
   {
     title: 'Amarnath Yatra',
     summary:
       '3 Nights/4 Days',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
-    image: hutInWoodsImage,
+    image: assetUrl('hut_in_woods.jpg'),
   },
   {
     title: 'Srinagar Tour Package',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
     summary:
       '4 Nights/5 Days',
-    image: srinagarImage,
+    image: assetUrl('Srinagar scapes.jpg'),
   },
   {
     title: 'Kashmir Family Tour',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
     summary:
       '5 Nights/6 Days',
-    image: pahalgamImage,
+    image: assetUrl('pahalgam.jpg'),
   },{
     title: 'Group Tour',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
     summary:
       '6 Nights/7 Days',
-    image: gulmargMeadowImage,
+    image: assetUrl('gulmarg-meadows.jpg'),
   },{
     title: 'Vaishno Devi Tour Packages',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
     summary:
       '2 Nights/3 Days',
-    image: forestImage,
+    image: assetUrl('Forest.jpg'),
 
   }
 ]

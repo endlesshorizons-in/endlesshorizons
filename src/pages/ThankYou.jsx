@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import Card from '../components/common/Card'
+import Seo from '../components/common/Seo'
 import PageContainer from '../components/layout/PageContainer'
 
 export default function ThankYou() {
@@ -8,6 +9,11 @@ export default function ThankYou() {
 
   return (
     <PageContainer>
+      <Seo
+        title="Thank You"
+        description="Your travel request has been received. Endless Horizons will review your details and follow up with a personalized draft."
+        noIndex
+      />
       <Card>
         <p className="mb-2 text-xs font-bold uppercase tracking-wider text-teal-700">
           Request Received

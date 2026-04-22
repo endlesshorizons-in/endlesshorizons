@@ -20,7 +20,7 @@ export default function DestinationCard({ destination }) {
 				{destination.region}
 			</p>
 			<h3 className="mb-2 text-xl font-semibold text-white">{destination.name}</h3>
-			<div className="overflow-hidden transition-all duration-300 md:max-h-0 md:translate-y-2 md:opacity-0 md:delay-75 md:group-hover:max-h-64 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+			<div className="overflow-hidden transition-all duration-300 md:max-h-0 md:translate-y-2 md:opacity-0 md:delay-75 md:group-hover:max-h-96 md:group-hover:translate-y-0 md:group-hover:opacity-100">
 				<p className="mb-2 text-slate-200">{destination.description}</p>
 				<p className="mb-1 text-slate-100">
 					<strong hidden={!destination.idealFor}>Ideal For:</strong> {destination.idealFor}
@@ -34,13 +34,37 @@ export default function DestinationCard({ destination }) {
 					{destination.highlights.map((point) => (
 						<span
 							key={point}
-							className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.08] px-2.5 py-1 text-xs text-slate-200"
+							className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/8 px-2.5 py-1 text-xs text-slate-200"
 						>
 							<span className="text-[10px] text-cyan-200" aria-hidden="true">✦</span>
 							{point}
 						</span>
 					))}
 				</div>
+				{(destination.mapUrl || destination.sourceUrl) && (
+					<div className="mt-3 flex flex-wrap gap-2">
+						{destination.mapUrl && (
+							<a
+								href={destination.mapUrl}
+								target="_blank"
+								rel="noreferrer"
+								className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs text-white transition hover:bg-white/20"
+							>
+								Open Map
+							</a>
+						)}
+						{destination.sourceUrl && (
+							<a
+								href={destination.sourceUrl}
+								target="_blank"
+								rel="noreferrer"
+								className="rounded-full border border-cyan-200/40 bg-cyan-100/10 px-3 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100/20"
+							>
+								Official Details
+							</a>
+						)}
+					</div>
+				)}
 			</div>
 		</Card>
 	)
