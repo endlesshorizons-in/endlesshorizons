@@ -27,7 +27,13 @@ function syncTag(selector, createTag, attributes) {
   })
 }
 
-export default function Seo({ title, description = DEFAULT_DESCRIPTION, image = assetUrl('Logo.png'), noIndex = false }) {
+export default function Seo({
+  title,
+  description = DEFAULT_DESCRIPTION,
+  image = assetUrl('Logo.png'),
+  noIndex = false,
+  keywords,
+}) {
   const location = useLocation()
 
   useEffect(() => {
@@ -41,6 +47,12 @@ export default function Seo({ title, description = DEFAULT_DESCRIPTION, image = 
       name: 'description',
       content: description,
     })
+    if (keywords) {
+      syncTag('meta[name="keywords"]', 'meta', {
+        name: 'keywords',
+        content: keywords,
+      })
+    }
     syncTag('meta[name="robots"]', 'meta', {
       name: 'robots',
       content: noIndex ? 'noindex,nofollow' : 'index,follow',
@@ -85,7 +97,7 @@ export default function Seo({ title, description = DEFAULT_DESCRIPTION, image = 
       name: 'twitter:image',
       content: absoluteImage,
     })
-  }, [description, image, location.pathname, noIndex, title])
+  }, [description, image, keywords, location.pathname, noIndex, title])
 
   return null
 }

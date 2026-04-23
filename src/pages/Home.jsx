@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Card from '../components/common/Card'
 import Seo from '../components/common/Seo'
 import { assetUrl } from '../lib/assetUrls'
@@ -7,9 +7,21 @@ import { ROUTE_PATHS } from '../lib/routes'
 import { destinations } from '../data/destinations'
 
 export default function Home() {
+  const navigate = useNavigate()
   const [progress, setProgress] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+
+  const goToServices = () => {
+    navigate(ROUTE_PATHS.SERVICES)
+  }
+
+  const onCardKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      goToServices()
+    }
+  }
 
   useEffect(() => {
     if (isPaused) return
@@ -40,9 +52,10 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Kashmir Travel Planning"
-        description="Plan curated Kashmir, Jammu, and Ladakh journeys with local guides, transparent itineraries, and responsive support from Endless Horizons."
+        title="Kashmir Tour Packages and Travel Planning"
+        description="Book Kashmir tour packages with local experts at Endless Horizons. Explore Jammu, Kashmir, and Ladakh itineraries with transport, stays, sightseeing, and guided support."
         image={assetUrl('Mountains.jpg')}
+        keywords="Kashmir tour packages, Kashmir travel agency, Jammu Kashmir Ladakh tour, Kashmir honeymoon package, Srinagar Gulmarg Pahalgam itinerary, Endless Horizons"
       />
       <section className="mx-auto mt-8 w-[min(1120px,92vw)]">
         <div className="grid min-h-[65vh] items-start gap-10 md:grid-cols-[0.5fr_1.1fr]">
@@ -74,8 +87,13 @@ export default function Home() {
           <div className="grid gap-6">
             <Card
               lift
-              className="overflow-hidden"
+              className="group cursor-pointer overflow-hidden"
               style={{ transform: `translateY(${6 - lift}px)` }}
+              onClick={goToServices}
+              onKeyDown={onCardKeyDown}
+              role="link"
+              tabIndex={0}
+              aria-label="View Kashmir tour services"
             >
               <img
                 src={assetUrl('Mountains.jpg')}
@@ -89,13 +107,21 @@ export default function Home() {
                   Jammu | Kashmir | Ladakh
                 </p>
               </div>
+              <p className="mt-2 max-h-0 overflow-hidden text-xs text-slate-300 opacity-0 transition-all duration-300 md:group-hover:max-h-16 md:group-hover:opacity-100 md:group-focus-within:max-h-16 md:group-focus-within:opacity-100">
+                Discover curated Kashmir tour packages with hotel, sightseeing, and transport inclusions.
+              </p>
             </Card>
 
             <div className="grid gap-6 md:grid-cols-2">
               <Card
                 lift
-                className="overflow-hidden"
+                className="group cursor-pointer overflow-hidden"
                 style={{ transform: `translateY(${18 - lift * 0.75}px)` }}
+                onClick={goToServices}
+                onKeyDown={onCardKeyDown}
+                role="link"
+                tabIndex={0}
+                aria-label="Explore Pahalgam tour services"
               >
                 <img
                   src={assetUrl('Forest.jpg')}
@@ -107,12 +133,20 @@ export default function Home() {
                 <p className="mt-3 text-sm text-slate-100">
                   Pahalgam Forest Trails
                 </p>
+                <p className="mt-2 max-h-0 overflow-hidden text-xs text-slate-300 opacity-0 transition-all duration-300 md:group-hover:max-h-16 md:group-hover:opacity-100 md:group-focus-within:max-h-16 md:group-focus-within:opacity-100">
+                  Compare family-friendly Kashmir packages designed around scenic forest and valley routes.
+                </p>
               </Card>
 
               <Card
                 lift
-                className="overflow-hidden"
+                className="group cursor-pointer overflow-hidden"
                 style={{ transform: `translateY(${18 - lift * 0.65}px)` }}
+                onClick={goToServices}
+                onKeyDown={onCardKeyDown}
+                role="link"
+                tabIndex={0}
+                aria-label="Explore Gulmarg tour services"
               >
                 <img
                   src={assetUrl('Gulmarg.jpg')}
@@ -123,6 +157,9 @@ export default function Home() {
                 />
                 <p className="mt-3 text-sm text-slate-100">
                   Gulmarg Snow Routes
+                </p>
+                <p className="mt-2 max-h-0 overflow-hidden text-xs text-slate-300 opacity-0 transition-all duration-300 md:group-hover:max-h-16 md:group-hover:opacity-100 md:group-focus-within:max-h-16 md:group-focus-within:opacity-100">
+                  Explore Gulmarg-focused itineraries for snow travel, gondola views, and mountain stays.
                 </p>
               </Card>
             </div>
@@ -136,10 +173,15 @@ export default function Home() {
         </p>
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <Card
-            className="overflow-hidden"
+            className="group cursor-pointer overflow-hidden"
             style={{ transform: `translateY(${22 - lift * 0.45}px)` }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            onClick={goToServices}
+            onKeyDown={onCardKeyDown}
+            role="link"
+            tabIndex={0}
+            aria-label="View featured destination services"
           >
             {/* Image slider */}
             <div className="relative overflow-hidden rounded-2xl">
@@ -166,7 +208,10 @@ export default function Home() {
                 {destinations.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setCurrentSlide(i)}
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      setCurrentSlide(i)
+                    }}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       i === currentSlide ? 'w-5 bg-white' : 'w-1.5 bg-white/40 hover:bg-white/70'
                     }`}
@@ -195,11 +240,19 @@ export default function Home() {
                   </span>
                 ))}
               </div>
+              <p className="mt-3 max-h-0 overflow-hidden text-xs text-slate-300 opacity-0 transition-all duration-300 md:group-hover:max-h-16 md:group-hover:opacity-100 md:group-focus-within:max-h-16 md:group-focus-within:opacity-100">
+                Browse destination-led Kashmir travel services and choose a route that fits your dates and budget.
+              </p>
             </div>
           </Card>
 
-          <Card className="flex flex-col justify-between"
+          <Card className="group flex cursor-pointer flex-col justify-between"
             style={{ transform: `translateY(${22 - lift * 0.45}px)` }}
+            onClick={goToServices}
+            onKeyDown={onCardKeyDown}
+            role="link"
+            tabIndex={0}
+            aria-label="View tailored travel services"
           >
             <div>
               <img
@@ -215,6 +268,9 @@ export default function Home() {
               <p className="mt-2 text-sm text-slate-300">
                 Every route is designed by people who live here — no cookie-cutter packages,
                 no hidden costs, and a single point of contact from booking to return.
+              </p>
+              <p className="mt-3 max-h-0 overflow-hidden text-xs text-slate-300 opacity-0 transition-all duration-300 md:group-hover:max-h-16 md:group-hover:opacity-100 md:group-focus-within:max-h-16 md:group-focus-within:opacity-100">
+                Get personalized Kashmir holiday packages with transparent pricing and local support.
               </p>
               <div className="mt-6 grid grid-cols-3 gap-3">
                 {[
@@ -233,10 +289,11 @@ export default function Home() {
               </div>
             </div>
             <Link
-              to="https://wa.me/919149431835"
+              to={ROUTE_PATHS.SERVICES}
               className="mt-8 inline-flex w-fit rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
+              onClick={(event) => event.stopPropagation()}
             >
-              Talk to us
+              Explore Services
             </Link>
           </Card>
         </div>
@@ -268,10 +325,13 @@ export default function Home() {
                   {num}
                 </div>
                 <div className="hidden h-5 w-px bg-linear-to-b from-white/25 to-transparent md:block" />
-                <div className="flex-1 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:w-full md:text-center">
+                <Link to={ROUTE_PATHS.SERVICES} className="group flex-1 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:w-full md:text-center">
                   <p className="font-semibold text-white">{title}</p>
                   <p className="mt-2 text-sm text-slate-300">{desc}</p>
-                </div>
+                  <p className="mt-2 max-h-0 overflow-hidden text-xs text-slate-300 opacity-0 transition-all duration-300 md:group-hover:max-h-12 md:group-hover:opacity-100 md:group-focus-within:max-h-12 md:group-focus-within:opacity-100">
+                    See matching services and package options.
+                  </p>
+                </Link>
               </div>
             ))}
           </div>
