@@ -1,3 +1,5 @@
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_NUMBER, CONTACT_WHATSAPP_URL } from '../../lib/constants'
+
 export default function Footer() {
 	return (
 		<footer className="mt-12 border-t border-white/20 bg-slate-950/55 backdrop-blur-2xl">
@@ -13,9 +15,9 @@ export default function Footer() {
 				<div>
 					<p className="text-sm font-semibold uppercase tracking-wider text-white/90">Contact</p>
 					<div className="mt-3 space-y-2 text-sm text-slate-200">
-						<a href="tel:+919149431835" className="flex items-center gap-2 hover:text-white">
+						<a href={`tel:${CONTACT_PHONE_NUMBER}`} className="flex items-center gap-2 hover:text-white">
 							<span aria-hidden="true">📞</span>
-							+91 91494 31835
+							{CONTACT_PHONE_DISPLAY}
 						</a>
 						<a href="mailto:endlesshorizons19@gmail.com" className="flex items-center gap-2 hover:text-white">
 							<span aria-hidden="true">✉️</span>
@@ -58,7 +60,7 @@ export default function Footer() {
 							</svg>
 						</a>
 						<a
-							href="https://wa.me/919149431835"
+							href={CONTACT_WHATSAPP_URL}
 							target="_blank"
 							rel="noreferrer"
 							aria-label="WhatsApp"

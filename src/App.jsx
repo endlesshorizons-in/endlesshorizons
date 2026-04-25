@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import FloatingContactButtons from './components/layout/FloatingContactButtons'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
 import { assetUrl } from './lib/assetUrls'
@@ -77,6 +78,7 @@ function App() {
             ))}
           </Routes>
         </main>
+        <FloatingContactButtons />
         <Footer />
       </div>
     </BrowserRouter>

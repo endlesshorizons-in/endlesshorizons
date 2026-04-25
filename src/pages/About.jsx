@@ -4,6 +4,8 @@ import SectionHeading from '../components/common/SectionHeading'
 import PageContainer from '../components/layout/PageContainer'
 import { assetUrl } from '../lib/assetUrls'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { ROUTE_PATHS } from '../lib/routes'
 
 export default function About() {
   const [isCertificateFlipped, setIsCertificateFlipped] = useState(false)
@@ -25,7 +27,7 @@ export default function About() {
       <PageContainer>
         <SectionHeading
           eyebrow="About Endless Horizons"
-          title="Your local host for Kashmir journeys"
+          title="Welcome to Endless Horizons - Your host for unforgettable journeys"
           subtitle="Trusted local guidance, clear planning, and official registration with the Department of Tourism, Government of Jammu and Kashmir."
         />
 
@@ -38,6 +40,9 @@ export default function About() {
             </p>
             <p className="mt-2 text-slate-200">
               Our focus is simple: clean planning, reliable coordination, and routes that match the season, budget, and comfort level of each traveler.
+            </p>
+            <p className="mt-2 text-slate-200">
+              We are a government-registered Excursion Agency dedicated to showcasing the true beauty of Jammu, Kashmir, Ladakh and Manali. Unlike distant booking portals, we are locals who know every turn of the road to Gulmarg and every hidden gem in Pahalgam.
             </p>
           </Card>
 
@@ -128,17 +133,46 @@ export default function About() {
             <li>Local-ground partner network</li>
             <li>Clear package inclusions and exclusions</li>
             <li>Practical day-by-day movement planning</li>
+            <li>
+              24/7 On-Ground Support: We are here physically. If a road to Sonamarg gets closed due to snow, we are the first to know and re-route you immediately.
+            </li>
+            <li>
+              No Middlemen: You are booking directly with the ground handling agency, ensuring the best rates for hotels and transport.
+            </li>
+            <li>
+              Authentic Experiences: We do not just show you places; we help you experience the culture, food (Wazwan), and hospitality of J and K.
+            </li>
           </ul>
         </Card>
         <Card className="border-white/25 bg-white/10">
-          <h3 className="text-2xl font-semibold text-white">Who Travels With Us</h3>
+          <h3 className="text-2xl font-semibold text-white">Safe & Honourable Tourism</h3>
           <p className="mt-2 text-slate-200">
-            Families, honeymooners, corporate groups, and solo travelers looking for hassle-free Kashmir circuits.
+            J and K Tourism places high value on safety and ethics.
           </p>
           <p className="mt-2 text-slate-200">
-            From airport pickup to final drop, we focus on smooth execution and responsive support.
+            The Pledge: We are committed to the safety and security of our guests. Our drivers are verified, our guides are registered, and we strictly follow all J and K Tourism safety guidelines.
+          </p>
+          <p className="mt-2 text-slate-200">
+            Eco-Tourism Note: We pledge to keep Kashmir clean. We encourage eco-friendly travel practices.
+          </p>
+          <h3 className="mt-5 text-2xl font-semibold text-white">Who Travels With Us</h3>
+          <p className="mt-2 text-slate-200">
+            From families and honeymooners to solo explorers and corporate groups, we host travelers looking for memorable journeys across Kashmir, Ladakh, Manali and beyond.
+          </p>
+          <p className="mt-2 text-slate-200">
+            With end-to-end support, we ensure every trip is smooth, comfortable, and truly unforgettable.
           </p>
         </Card>
+      </section>
+
+      <section className="mx-auto mb-12 w-[min(1120px,92vw)] text-center">
+        <p className="text-xl font-bold text-white">Ready to plan a safe and memorable trip?</p>
+        <Link
+          to={ROUTE_PATHS.CONTACT}
+          className="mt-4 inline-flex rounded-full bg-linear-to-r from-cyan-900 to-teal-600 px-5 py-3 text-sm font-bold text-white shadow-[0_9px_18px_rgba(8,47,73,0.24)] transition hover:brightness-105"
+        >
+          Contact Our Team
+        </Link>
       </section>
     </>
   )

@@ -8,7 +8,7 @@ import PageContainer from '../components/layout/PageContainer'
 export default function Contact() {
   const [status, setStatus] = useState({ type: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID'
+  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_QUERY_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID'
 
   const handleSubmit = async (event) => {
     event.preventDefault()

@@ -10,7 +10,7 @@ export default function Services() {
   const [activeService, setActiveService] = useState(null)
   const [status, setStatus] = useState({ type: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID'
+  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_PACKAGE_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID'
 
   const packageMeta = useMemo(() => {
     if (!activeService) {
