@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Card from '../components/common/Card'
 import Seo from '../components/common/Seo'
 import { assetUrl } from '../lib/assetUrls'
@@ -8,9 +9,21 @@ import { destinations } from '../data/destinations'
 
 export default function Home() {
   const navigate = useNavigate()
+  const navigate = useNavigate()
   const [progress, setProgress] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+
+  const goToServices = () => {
+    navigate(ROUTE_PATHS.SERVICES)
+  }
+
+  const onCardKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      goToServices()
+    }
+  }
 
   const goToServices = () => {
     navigate(ROUTE_PATHS.SERVICES)
@@ -54,7 +67,10 @@ export default function Home() {
       <Seo
         title="Kashmir Tour Packages and Travel Planning"
         description="Book Kashmir tour packages with local experts at Endless Horizons. Explore Jammu, Kashmir, and Ladakh itineraries with transport, stays, sightseeing, and guided support."
+        title="Kashmir Tour Packages and Travel Planning"
+        description="Book Kashmir tour packages with local experts at Endless Horizons. Explore Jammu, Kashmir, and Ladakh itineraries with transport, stays, sightseeing, and guided support."
         image={assetUrl('Mountains.jpg')}
+        keywords="Kashmir tour packages, Kashmir travel agency, Jammu Kashmir Ladakh tour, Kashmir honeymoon package, Srinagar Gulmarg Pahalgam itinerary, Endless Horizons"
         keywords="Kashmir tour packages, Kashmir travel agency, Jammu Kashmir Ladakh tour, Kashmir honeymoon package, Srinagar Gulmarg Pahalgam itinerary, Endless Horizons"
       />
       <section className="mx-auto mt-8 w-[min(1120px,92vw)]">
@@ -88,7 +104,13 @@ export default function Home() {
             <Card
               lift
               className="group cursor-pointer overflow-hidden"
+              className="group cursor-pointer overflow-hidden"
               style={{ transform: `translateY(${6 - lift}px)` }}
+              onClick={goToServices}
+              onKeyDown={onCardKeyDown}
+              role="link"
+              tabIndex={0}
+              aria-label="View Kashmir tour services"
               onClick={goToServices}
               onKeyDown={onCardKeyDown}
               role="link"
@@ -116,7 +138,13 @@ export default function Home() {
               <Card
                 lift
                 className="group cursor-pointer overflow-hidden"
+                className="group cursor-pointer overflow-hidden"
                 style={{ transform: `translateY(${18 - lift * 0.75}px)` }}
+                onClick={goToServices}
+                onKeyDown={onCardKeyDown}
+                role="link"
+                tabIndex={0}
+                aria-label="Explore Pahalgam tour services"
                 onClick={goToServices}
                 onKeyDown={onCardKeyDown}
                 role="link"
@@ -141,7 +169,13 @@ export default function Home() {
               <Card
                 lift
                 className="group cursor-pointer overflow-hidden"
+                className="group cursor-pointer overflow-hidden"
                 style={{ transform: `translateY(${18 - lift * 0.65}px)` }}
+                onClick={goToServices}
+                onKeyDown={onCardKeyDown}
+                role="link"
+                tabIndex={0}
+                aria-label="Explore Gulmarg tour services"
                 onClick={goToServices}
                 onKeyDown={onCardKeyDown}
                 role="link"
@@ -174,9 +208,15 @@ export default function Home() {
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <Card
             className="group cursor-pointer overflow-hidden"
+            className="group cursor-pointer overflow-hidden"
             style={{ transform: `translateY(${22 - lift * 0.45}px)` }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            onClick={goToServices}
+            onKeyDown={onCardKeyDown}
+            role="link"
+            tabIndex={0}
+            aria-label="View featured destination services"
             onClick={goToServices}
             onKeyDown={onCardKeyDown}
             role="link"
@@ -208,6 +248,10 @@ export default function Home() {
                 {destinations.map((_, i) => (
                   <button
                     key={i}
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      setCurrentSlide(i)
+                    }}
                     onClick={(event) => {
                       event.stopPropagation()
                       setCurrentSlide(i)
@@ -247,7 +291,13 @@ export default function Home() {
           </Card>
 
           <Card className="group flex cursor-pointer flex-col justify-between"
+          <Card className="group flex cursor-pointer flex-col justify-between"
             style={{ transform: `translateY(${22 - lift * 0.45}px)` }}
+            onClick={goToServices}
+            onKeyDown={onCardKeyDown}
+            role="link"
+            tabIndex={0}
+            aria-label="View tailored travel services"
             onClick={goToServices}
             onKeyDown={onCardKeyDown}
             role="link"
@@ -290,9 +340,12 @@ export default function Home() {
             </div>
             <Link
               to={ROUTE_PATHS.SERVICES}
+              to={ROUTE_PATHS.SERVICES}
               className="mt-8 inline-flex w-fit rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
               onClick={(event) => event.stopPropagation()}
+              onClick={(event) => event.stopPropagation()}
             >
+              Explore Services
               Explore Services
             </Link>
           </Card>
@@ -325,6 +378,7 @@ export default function Home() {
                   {num}
                 </div>
                 <div className="hidden h-5 w-px bg-linear-to-b from-white/25 to-transparent md:block" />
+                <Link to={ROUTE_PATHS.SERVICES} className="group flex-1 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:w-full md:text-center">
                 <Link to={ROUTE_PATHS.SERVICES} className="group flex-1 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:w-full md:text-center">
                   <p className="font-semibold text-white">{title}</p>
                   <p className="mt-2 text-sm text-slate-300">{desc}</p>
