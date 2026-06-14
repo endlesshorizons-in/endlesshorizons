@@ -17,7 +17,7 @@ export default function Contact() {
     if (formspreeEndpoint.includes('YOUR_FORM_ID')) {
       setStatus({
         type: 'error',
-        message: 'Please set VITE_FORMSPREE_ENDPOINT in your .env file before sending messages.',
+        message: 'Please set VITE_FORMSPREE_QUERY_ENDPOINT in your .env file before sending messages.',
       })
       return
     }
@@ -62,55 +62,76 @@ export default function Contact() {
       <SectionHeading
         eyebrow="Contact"
         title="Let Us Start Planning"
-        subtitle="Share your travel idea and our team will connect shortly."
+        subtitle="Tell us your dates, route preferences, and travel style. Our local team will get back with a clear plan."
       />
 
-      <div className="grid w-full gap-4 md:grid-cols-2">
-        <Card className="border-white/25 bg-white/10">
+      <div className="grid w-full gap-6 md:grid-cols-[0.95fr_1.05fr]">
+        <Card className="border-white/25 bg-linear-to-b from-white/15 to-white/5">
           <p className="text-xs font-bold uppercase tracking-wider text-cyan-200">Reach Us</p>
-          <h3 className="mt-2 text-2xl font-semibold text-white">Direct planning support</h3>
-          <div className="mt-4 space-y-3 text-sm text-slate-200">
-            <p>
-              <span className="text-slate-100/80">Email:</span> endlesshorizons19@gmail.com
-            </p>
-            <p>
-              <span className="text-slate-100/80">Phone:</span> +91 9149431835
-            </p>
-            <p>
-              <span className="text-slate-100/80">Office:</span> Kalantra Baramulla, Jammu & Kashmir
-            </p>
+          <h3 className="mt-2 text-2xl font-semibold text-white">Direct planning support from locals</h3>
+          <p className="mt-3 text-sm leading-6 text-slate-200">
+            Speak directly with our team for route guidance, package clarity, and real-time local support before and during your trip.
+          </p>
+
+          <div className="mt-6 grid gap-3">
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-4">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-100/90">Email</p>
+              <p className="mt-1 text-sm text-slate-100">endlesshorizons19@gmail.com</p>
+            </div>
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-4">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-100/90">Phone</p>
+              <p className="mt-1 text-sm text-slate-100">+91 9149431835</p>
+            </div>
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-4">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-100/90">Office</p>
+              <p className="mt-1 text-sm text-slate-100">Kalantra Baramulla, Jammu and Kashmir</p>
+            </div>
           </div>
-          <div className="mt-5 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-cyan-100">
-            24/7 Support
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <span className="inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-cyan-100">
+              24/7 Support
+            </span>
+            <span className="inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-cyan-100">
+              Local Coordination
+            </span>
+            <span className="inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-cyan-100">
+              Transparent Planning
+            </span>
           </div>
         </Card>
 
-        <Card className="border-white/25 bg-white/10">
+        <Card className="border-white/25 bg-linear-to-b from-white/15 to-white/5">
+          <p className="text-xs font-bold uppercase tracking-wider text-cyan-200">Trip Inquiry</p>
+          <h3 className="mt-2 text-2xl font-semibold text-white">Share your plan and we will respond shortly</h3>
+
           <form className="grid gap-4" onSubmit={handleSubmit}>
-            <div className="grid gap-1.5">
-              <label htmlFor="contact-name" className="text-sm font-semibold text-slate-100">
-                Name
-              </label>
-              <input
-                id="contact-name"
-                name="name"
-                required
-                placeholder="Your name"
-                className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 placeholder:text-slate-400 outline-none ring-cyan-500 transition focus:ring-2"
-              />
-            </div>
-            <div className="grid gap-1.5">
-              <label htmlFor="contact-email" className="text-sm font-semibold text-slate-100">
-                Email
-              </label>
-              <input
-                id="contact-email"
-                name="email"
-                type="email"
-                required
-                placeholder="you@email.com"
-                className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 placeholder:text-slate-400 outline-none ring-cyan-500 transition focus:ring-2"
-              />
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-1.5">
+                <label htmlFor="contact-name" className="text-sm font-semibold text-slate-100">
+                  Name
+                </label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 placeholder:text-slate-400 outline-none ring-cyan-500 transition focus:ring-2"
+                />
+              </div>
+              <div className="grid gap-1.5">
+                <label htmlFor="contact-email" className="text-sm font-semibold text-slate-100">
+                  Email
+                </label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@email.com"
+                  className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 placeholder:text-slate-400 outline-none ring-cyan-500 transition focus:ring-2"
+                />
+              </div>
             </div>
             <div className="grid gap-1.5">
               <label htmlFor="contact-message" className="text-sm font-semibold text-slate-100">
@@ -121,7 +142,7 @@ export default function Contact() {
                 name="message"
                 required
                 placeholder="Tell us what kind of trip you are planning"
-                className="min-h-28 rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 placeholder:text-slate-400 outline-none ring-cyan-500 transition focus:ring-2"
+                className="min-h-32 rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 placeholder:text-slate-400 outline-none ring-cyan-500 transition focus:ring-2"
               />
             </div>
             {status.message ? (

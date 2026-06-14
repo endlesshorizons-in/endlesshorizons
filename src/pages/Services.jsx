@@ -171,26 +171,65 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="grid gap-1.5 md:grid-cols-2 md:gap-3">
-                <div className="grid gap-1.5">
+              <div className="grid gap-3 md:grid-cols-[0.6fr_1.3fr] md:items-start">
+                <div className="grid gap-1.5 md:max-w-55">
                   <label htmlFor="inquiry-month" className="text-sm font-semibold text-slate-100">Preferred Month</label>
-                  <input
-                    id="inquiry-month"
-                    name="travelMonth"
-                    className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 outline-none ring-cyan-500 transition focus:ring-2"
-                    placeholder="e.g. June"
-                  />
+                  <div className="relative">
+                    <select
+                      id="inquiry-month"
+                      name="travelMonth"
+                      className="w-full appearance-none rounded-2xl border border-white/25 bg-white/10 px-3 py-2 pr-12 font-medium text-white outline-none ring-cyan-500 transition focus:ring-2 [&>option]:bg-slate-900 [&>option]:text-slate-100"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>Select month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-cyan-100/90"
+                    >
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="grid gap-1.5">
-                  <label htmlFor="inquiry-travelers" className="text-sm font-semibold text-slate-100">Travelers</label>
-                  <input
-                    id="inquiry-travelers"
-                    name="travelers"
-                    type="number"
-                    min="1"
-                    className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 outline-none ring-cyan-500 transition focus:ring-2"
-                    placeholder="2"
-                  />
+
+                <div className="grid gap-3 sm:grid-cols-2 sm:items-end">
+                  <div className="grid gap-1.5">
+                    <label htmlFor="inquiry-adults" className="text-sm font-semibold text-slate-100">Adults</label>
+                    <input
+                      id="inquiry-adults"
+                      name="adults"
+                      type="number"
+                      min="1"
+                      className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 outline-none ring-cyan-500 transition focus:ring-2 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                      placeholder="2"
+                    />
+                  </div>
+
+                    <div className="grid gap-1.5">
+                    <label htmlFor="inquiry-kids" className="text-sm font-semibold text-slate-100">Kids</label>
+                    <input
+                      id="inquiry-kids"
+                      name="kids"
+                      type="number"
+                      min="0"
+                        className="rounded-2xl border border-white/25 bg-white/10 px-3 py-2 text-slate-100 outline-none ring-cyan-500 transition focus:ring-2 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                      placeholder="Children under age 9"
+                    />
+                  </div>
                 </div>
               </div>
 

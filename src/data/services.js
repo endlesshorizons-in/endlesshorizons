@@ -35,7 +35,7 @@ export const services = [
     summary:
       '3 Nights/4 Days',
     servicesIncluded:["hotel","transportation","sightseeing","meals"],
-    image: assetUrl('hut_in_woods.jpg'),
+    image: assetUrl('amarnath.webp'),
   },
   {
     title: 'Srinagar Tour Package',
